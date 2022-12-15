@@ -1,0 +1,64 @@
+<form #gameForm="ngForm" novalidate (submit)="saveGame()">
+    <h2 mat-dialog-title>Register game</h2>
+    <mat-dialog-content class="mat-typography">
+        <div class="row form-group mb-3">
+            <div class="col">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Name</mat-label>
+                    <input matInput
+                    placeholder="Forza Horizon 5"
+                    #name="ngModel"
+                    name="name"
+                    [(ngModel)]="game.name"
+                    required>
+                    <mat-error *ngIf="name.invalid">
+                        <span *ngIf="name.errors?.['required']">
+                            Campo obligatorio
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Descrption</mat-label>
+                    <input matInput
+                           placeholder="good game"
+                           #description="ngModel"
+                           name="description"
+                           [(ngModel)]="game.description"
+                           required>
+                    <mat-error *ngIf="description.invalid">
+                        <span *ngIf="description.errors?.['required']">
+                            Campo obligatorio
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row form-group mb-3">
+            <div class="col">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Price</mat-label>
+                    <input matInput
+                           type="number"
+                           placeholder="1200"
+                           #salary="ngModel"
+                           name="price"
+                           min="1"
+                           [(ngModel)]="game.price"
+                           required>
+                    <mat-error *ngIf="salary.invalid">
+                        <span *ngIf="salary.errors?.['required']">
+                            Campo obligatorio
+                        </span>
+                        <span *ngIf="salary.errors?.['min']">
+                            Mínimo ingrese "1"
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+    </mat-dialog-content>
+</form>
