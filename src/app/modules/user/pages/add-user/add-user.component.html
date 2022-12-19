@@ -1,0 +1,64 @@
+<form #userForm="ngForm" novalidate (submit)="saveUser()">
+    <h2 mat-dialog-title>Registro de datos de usuario</h2>
+    <mat-dialog-content class="mat-typography">
+        <div class="row form-group mb-3">
+            <div class="col">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Nombre de usuario</mat-label>
+                    <input matInput
+                           placeholder="Mike"
+                           #name="ngModel"
+                           name="name"
+                           [(ngModel)]="user.username"
+                           required>
+                    <mat-error *ngIf="name.invalid">
+                        <span *ngIf="name.errors?.['required']">
+                            Campo obligatorio
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Correo</mat-label>
+                    <input matInput
+                           type="email"
+                           placeholder="Moreno"
+                           #surname="ngModel"
+                           name="surname"
+                           [(ngModel)]="user.email"
+                           required>
+                    <mat-error *ngIf="surname.invalid">
+                        <span *ngIf="surname.errors?.['required']">
+                            Campo obligatorio
+                        </span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row form-group mb-3">
+            <div class="col">
+                <mat-form-field appearance="fill" class="w-100">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput
+                           type="password"
+                           placeholder="Mike"
+                           #lastname="ngModel"
+                           name="lastname"
+                           [(ngModel)]="user.password"
+                    >
+                </mat-form-field>
+            </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button type="button" mat-button mat-dialog-close>
+            <mat-icon>close</mat-icon>
+            Cancelar
+        </button>
+        <button mat-button type="submit" [disabled]="userForm.invalid">
+            <mat-icon>check</mat-icon>
+            Continuar
+        </button>
+    </mat-dialog-actions>
+</form>

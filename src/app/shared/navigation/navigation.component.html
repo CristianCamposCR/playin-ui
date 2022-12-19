@@ -64,6 +64,7 @@
   si hay sesion muestra la vista general si no hay sesion muestra el login
   -->
   <div *ngIf="!session.logged">
-    <app-signin></app-signin>
+    <!--<app-signin></app-signin>-->
+    <app-list-game></app-list-game>
   </div>
 </div>

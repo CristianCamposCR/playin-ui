@@ -13,14 +13,14 @@
               alt="UTEZ"
               style="width: 40%; height: auto; display: inline"
             />
-            <mat-card-title>Log in</mat-card-title>
+            <mat-card-title>Iniciar sesión</mat-card-title>
           </div>
         </mat-card-header>
         <form #loginForm="ngForm" novalidate (submit)="signin()">
           <mat-card-content class="row">
             <div class="col-12 mb-3">
               <mat-form-field appearance="fill" class="w-50">
-                <mat-label>email</mat-label>
+                <mat-label>Correo</mat-label>
                 <input
                   matInput
                   [(ngModel)]="user.email"
@@ -42,7 +42,7 @@
             </div>
             <div class="col-12">
               <mat-form-field appearance="fill" class="w-50">
-                <mat-label>Password</mat-label>
+                <mat-label>Contraseña</mat-label>
                 <input
                   matInput
                   type="password"
@@ -68,7 +68,7 @@
                 color="primary"
                 [disabled]="loginForm.invalid || isLoading"
               >
-                Log in
+                Iniciar sesión
               </button>
             </div>
           </mat-card-actions>
@@ -76,6 +76,16 @@
             <mat-progress-bar mode="indeterminate"></mat-progress-bar>
           </mat-card-footer>
         </form>
+        <div class="col text-center">
+          <button
+                  mat-flat-button
+                  class="w-50"
+                  color="primary"
+                  (click)="openDialog('0ms', '0ms')"
+          >
+            Registrarse
+          </button>
+        </div>
       </mat-card>
     </div>
   </div>

@@ -12,10 +12,13 @@ import { AuthModule } from './modules/auth/auth.module';
 import { materialModules } from './services/material.modules';
 import { MainGameComponent } from './modules/game/pages/main-game/main-game.component';
 import { AddGameComponent } from './modules/game/pages/add-game/add-game.component';
+import { AddPersonComponent } from './modules/person/pages/add-person/add-person.component';
+import { AddUserComponent } from './modules/user/pages/add-user/add-user.component';
+import {ListGameComponent} from "./modules/game/pages/list-game/list-game.component";
 
 
 @NgModule({
-  declarations: [ NavigationComponent, AppComponent, ScreenComponent, MainGameComponent, AddGameComponent ],
+  declarations: [ NavigationComponent, AppComponent, ScreenComponent, MainGameComponent, AddGameComponent, AddPersonComponent, AddUserComponent, ListGameComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

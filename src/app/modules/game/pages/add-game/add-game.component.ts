@@ -26,7 +26,9 @@ export class AddGameComponent implements OnInit {
 
   saveGame(){
     console.log(this.game);
+    //console.log(this.loadedFile);
     this.game.image = this.loadedFile;
+    //console.log(this.game.image);
     if (this.gameService.edit){
       this.gameService.update(this.game)
           .subscribe((response) =>{
